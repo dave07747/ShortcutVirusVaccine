@@ -1,0 +1,21 @@
+﻿<Window x:Class="Shortcut_Virus_Vaccine.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shortcut_Virus_Vaccine"
+        mc:Ignorable="d"
+        Title="Vaccinate Your Flashdrive" Height="210.784" Width="297.549">
+    <Grid Background="#FF009688">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="77*"/>
+            <RowDefinition Height="95*"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="button" Content="Select Drive" HorizontalAlignment="Right" Margin="0,10,10,0" VerticalAlignment="Top" Background="#FF00796B" BorderBrush="#FF70C3BC" Foreground="White" FontSize="17.333" Click="button_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Drive Selected: " VerticalAlignment="Center" Foreground="White" FontSize="16"/>
+        <TextBlock x:Name="drive" HorizontalAlignment="Center" Margin="0" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="18.667" Foreground="White"><Run Text="C:\"/></TextBlock>
+        <ProgressBar x:Name="progress" Margin="10,0" Grid.Row="1" RenderTransformOrigin="0.508,0.043" Background="#FFB2DFDB" Foreground="#FF4CAF50" ValueChanged="ProgressBar_ValueChanged" VerticalAlignment="Center" Height="35"/>
+        <Button x:Name="button1" Content="Vaccinate" HorizontalAlignment="Right" Margin="0,0,10,7" VerticalAlignment="Bottom" Foreground="White" BorderBrush="#FF70C3BC" Background="#FF00796B" FontSize="17.333" Width="94" Click="button1_Click"/>
+
+    </Grid>
+</Window>

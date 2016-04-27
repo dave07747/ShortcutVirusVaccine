@@ -1,0 +1,14 @@
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\bin\Debug\Shortcut Virus Vaccine.exe.config
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\bin\Debug\Shortcut Virus Vaccine.exe
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\bin\Debug\Shortcut Virus Vaccine.pdb
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\Shortcut Virus Vaccine.csprojResolveAssemblyReference.cache
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\MainWindow.g.cs
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\App.g.cs
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\Shortcut Virus Vaccine_MarkupCompile.cache
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\Shortcut Virus Vaccine_MarkupCompile.lref
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\MainWindow.baml
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\Shortcut Virus Vaccine.g.resources
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\Shortcut_Virus_Vaccine.Properties.Resources.resources
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\Shortcut Virus Vaccine.csproj.GenerateResource.Cache
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\Shortcut Virus Vaccine.exe
+C:\Users\David\Desktop\C# Stuff\Shortcut Virus Vaccine\Shortcut Virus Vaccine\obj\Debug\Shortcut Virus Vaccine.pdb
