@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -15,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Microsoft.Win32;
+using System.IO;
 using MessageBox = System.Windows.Forms.MessageBox;
 
 namespace Shortcut_Virus_Vaccine
@@ -28,8 +31,9 @@ namespace Shortcut_Virus_Vaccine
         {
             InitializeComponent();
         }
-
+        private BackgroundWorker bw = new BackgroundWorker();
         private bool isProcessRunning = false;
+        private string temp;
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
@@ -42,7 +46,7 @@ namespace Shortcut_Virus_Vaccine
             if (result == System.Windows.Forms.DialogResult.OK)
             {
 
-                string temp = browser.SelectedPath;
+                 temp = browser.SelectedPath;
                 drive.Text = temp[0] + @":\";
             }
             else
@@ -58,8 +62,24 @@ namespace Shortcut_Virus_Vaccine
 
         private void clean()
         {
+            this.Dispatcher.Invoke((Action)(() =>
+            {
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
+                startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+                startInfo.FileName = "cmd.exe";
+                startInfo.Arguments = "attrib -h -r -s /s /d " + drive.Text + "*.*";
+                process.StartInfo = startInfo;
+                process.Start();
+ 
+               
+            }));
+          
+        }
 
-           
+        void bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            progress.Value = e.ProgressPercentage;
         }
 
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -70,23 +90,20 @@ namespace Shortcut_Virus_Vaccine
             }
             else
             {
-             
-
-               
-                    
-                for (int i = 0; i < 99; ++i)
+                bw.WorkerReportsProgress = true;
+                bw.DoWork += delegate
                 {
-                    progress.Value = i;
-                    
-                    Thread.Sleep(100);
-                }
+                    clean();
+                };
+                bw.ProgressChanged += bw_ProgressChanged;
                 
-
-                clean();
-                progress.Value = 100;
-                
-                
-                MessageBox.Show("Vaccine complete!");
+                bw.RunWorkerCompleted += (object send, RunWorkerCompletedEventArgs ee) =>
+                {
+                    progress.Value = 100;
+                    MessageBox.Show("Your flashdrive is now squeaky clean!");
+                };
+               
+                bw.RunWorkerAsync();
 
             }
         }
