@@ -62,8 +62,13 @@ namespace Shortcut_Virus_Vaccine
 
         private void clean()
         {
+       
+
             this.Dispatcher.Invoke((Action)(() =>
             {
+                /**
+                *Make files visible
+                */
                 System.Diagnostics.Process process = new System.Diagnostics.Process();
                 System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo();
                 startInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
@@ -71,10 +76,53 @@ namespace Shortcut_Virus_Vaccine
                 startInfo.Arguments = "attrib -h -r -s /s /d " + drive.Text + "*.*";
                 process.StartInfo = startInfo;
                 process.Start();
- 
-               
+
+
+                /**
+                *Delete shortcuts
+                */
+                DirectoryInfo di = new DirectoryInfo(temp);//DirectoryInfo(drive.Text);
+                FileInfo[] files = di.GetFiles("*.lnk").ToArray();
+             
+                Console.WriteLine(temp);
+                foreach (FileInfo file in files)
+                    try
+                    {
+                     
+                        Console.WriteLine(file.FullName);
+                        //Console.WriteLine("Make sure to change this to delete!");
+                        File.Delete(file.FullName);
+
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+                /**
+                *Delete actual virus
+                */
+                files = di.GetFiles("*.vbs").ToArray();
+
+                foreach (FileInfo file in files)
+                    try
+                    {
+
+                        Console.WriteLine(file.FullName);
+                        //Console.WriteLine("Make sure to change this to delete!");
+                        File.Delete(file.FullName);
+
+                    }
+                    catch (Exception e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+                
             }));
+            
           
+
         }
 
         void bw_ProgressChanged(object sender, ProgressChangedEventArgs e)
