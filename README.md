@@ -2,4 +2,5 @@
 Vaccine for Shortcut Virus
 
 Click this link to download
-[Download!][Shortcut Virus Vaccine/bin/Debug/Shortcut Virus Vaccine.exe]
+
+[Download!](Shortcut Virus Vaccine/bin/Debug/Shortcut Virus Vaccine.exe)
